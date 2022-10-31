@@ -1,0 +1,214 @@
+{
+  "settings": {
+    "name": "Calculadora",
+    "currentPage": "index.html",
+    "theme": {
+      "name": "mobirise4",
+      "title": "Mobirise 4",
+      "styling": {
+        "primaryColor": "#9e0a1b",
+        "secondaryColor": "#501118",
+        "successColor": "#45b87e",
+        "infoColor": "#6d85e1",
+        "warningColor": "#0a193b",
+        "dangerColor": "#000000",
+        "mainFont": "Rubik",
+        "display1Font": "Oswald",
+        "display1Size": "4",
+        "display2Font": "Oswald",
+        "display2Size": "2",
+        "display5Font": "Oswald",
+        "display5Size": "1.4",
+        "display7Font": "Ubuntu",
+        "display7Size": 1,
+        "display4Font": "Rubik",
+        "display4Size": 1,
+        "isRoundedButtons": true,
+        "isAnimatedOnScroll": false,
+        "isScrollToTopButton": false
+      },
+      "additionalSetColors": [
+        "#9e0a1b",
+        "#501118",
+        "#45b87e",
+        "#6d85e1",
+        "#0a193b",
+        "#000000"
+      ]
+    },
+    "path": "@PROJECT_PATH@",
+    "siteFonts": [
+      {
+        "css": "'Rubik', sans-serif",
+        "name": "Rubik",
+        "url": "https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i"
+      },
+      {
+        "css": "'Oswald', sans-serif",
+        "name": "Oswald",
+        "url": "https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700"
+      },
+      {
+        "css": "'Lato', sans-serif",
+        "name": "Lato",
+        "url": "https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+      },
+      {
+        "css": "'Ubuntu', sans-serif",
+        "name": "Ubuntu",
+        "url": "https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i"
+      }
+    ],
+    "versionFirst": "4.7.6",
+    "uniqCompNum": 15,
+    "versionPublish": "5.6.13",
+    "imageResize": true,
+    "robotsSwitcher": true,
+    "robotsText": "User-agent: *\nDisallow: /cgi-bin\n",
+    "favicon": false,
+    "sitemapSwitcher": false,
+    "sitemapSwitcherAuto": false,
+    "siteUrl": false,
+    "screenshot": "screenshot.png",
+    "cookiesAlert": false,
+    "gdpr": false,
+    "chatbutton": {},
+    "mbrsiteDomain": "b5o2vg5vph",
+    "cssOptimize": false,
+    "lazyLoad": false,
+    "witsec-white-label": false,
+    "witsec-mailform": false,
+    "pwa-switcher": false
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "Calculadora",
+        "meta_descr": "",
+        "header_custom": "<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css\" integrity=\"sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk\" crossorigin=\"anonymous\">",
+        "footer_custom": "<script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>\n<script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>\n<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js\" integrity=\"sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI\" crossorigin=\"anonymous\"></script>\n\n<script>\n$(function () {\n  // calculate circle\n  $(\"#formCirculator\").submit(function (event) {\n    event.preventDefault();\n    let diameter = $(\"#diameter_circle\").val() || 0;\n    let depth = $(\"#depth_circle\").val() || 0;\n    let result = Math.PI * Math.pow(diameter / 6, 2) * (depth / 36);\n    result = Math.round(result * 10000) / 10000;\n\n    $(\"#result_circle\").text(result);\n    $(\"#showResultCircle\").removeClass(\"hidden_class\");\n    $(this).addClass(\"hidden_class\");\n  });\n  // calculate cubic\n  $(\"#formCubic\").submit(function (event) {\n    event.preventDefault();\n    let length = $(\"#length_cubic\").val() || 0;\n    let width = $(\"#width_cubic\").val() || 0;\n    let height = $(\"#height_cubic\").val() || 0;\n    let result = (length / 3) * (width / 3) * (height / 36);\n    result = Math.round(result * 10000) / 10000;\n\n    $(\"#result_cubic\").text(result);\n    $(\"#showResultCubic\").removeClass(\"hidden_class\");\n    $(this).addClass(\"hidden_class\");\n  });\n  // calculate cubic\n  $(\"#formTriangle\").submit(function (event) {\n    event.preventDefault();\n    let side1 = $(\"#side_1_triangle\").val() || 0;\n    let side2 = $(\"#side_2_triangle\").val() || 0;\n    let side3 = $(\"#side_3_triangle\").val() || 0;\n    let depth = $(\"#depth_triangle\").val() || 0;\n\n    side1 = side1/3;\n    side2 = side2/3;\n    side3 = side3/3;\n\n    let semiperimetro = (side1+side2+side3)/2;\n    let areTrinagle = Math.sqrt(semiperimetro*(semiperimetro-side1)*(semiperimetro-side2)*(semiperimetro-side3));\n    \n    let result = areTrinagle * (depth / 36);\n    result = Math.round(result * 10000) / 10000;\n\n    $(\"#result_triangle\").text(result);\n    $(\"#showResultTriangle\").removeClass(\"hidden_class\");\n    $(this).addClass(\"hidden_class\");\n  });\n});\n\nfunction backFormCirculator() {\n  $(\"#result_circle\").text(\"\");\n  $(\"#showResultCircle\").addClass(\"hidden_class\");\n  $(\"#formCirculator\").removeClass(\"hidden_class\");\n}\n\nfunction backFormCubec() {\n  $(\"#result_cubic\").text(\"\");\n  $(\"#showResultCubic\").addClass(\"hidden_class\");\n  $(\"#formCubic\").removeClass(\"hidden_class\");\n}\n\nfunction backFormTriangle() {\n  $(\"#result_triangle\").text(\"\");\n  $(\"#showResultTriangle\").addClass(\"hidden_class\");\n  $(\"#formTriangle\").removeClass(\"hidden_class\");\n}\n</script>",
+        "html_before": "",
+        "socialSharingUrl": ""
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-section-subtitle": {
+              "color": "#767676"
+            },
+            ".media-row": {
+              "display": "-webkit-flex",
+              "justify-content": "center",
+              "-webkit-justify-content": "center"
+            },
+            ".team-item": {
+              "transition": "all .2s",
+              "margin-bottom": "2rem",
+              ".item-image img": {
+                "width": "100%"
+              },
+              ".item-name": {
+                "p": {
+                  "margin-bottom": "0"
+                }
+              },
+              ".item-role": {
+                "p": {
+                  "margin-bottom": "0"
+                }
+              },
+              ".item-social": {
+                "display": "-webkit-flex",
+                "flex-wrap": "wrap",
+                "justify-content": "center",
+                "-webkit-flex-wrap": "wrap",
+                "-webkit-justify-content": "center",
+                ".socicon": {
+                  "color": "#232323",
+                  "font-size": "17px"
+                }
+              },
+              ".item-caption": {
+                "& when (@bgCard)": {
+                  "background": "@cardColor"
+                }
+              }
+            },
+            ".hidden_class": {
+              "display": "none"
+            },
+            ".calculator-image": {
+              "width": "100%"
+            },
+            ".card-box": {
+              "padding": "0 2rem"
+            },
+            ".mbr-section-btn": {
+              "padding-top": "1rem",
+              "a": {
+                "margin-top": "1rem",
+                "margin-bottom": "0"
+              }
+            },
+            "h4": {
+              "font-weight": "500",
+              "margin-bottom": "0",
+              "text-align": "left",
+              "padding-top": "2rem"
+            },
+            "p": {
+              "margin-bottom": "0",
+              "text-align": "left",
+              "padding-top": "1.5rem",
+              "& when not (@showTitle)": {
+                "padding-top": "2rem"
+              }
+            },
+            ".mbr-text": {
+              "color": "#767676"
+            },
+            ".card-wrapper": {
+              "height": "100%",
+              "padding-bottom": "2rem",
+              "background": "#fff",
+              "box-shadow": "0px 0px 0px 0px rgba(0, 0, 0, 0)",
+              "transition": "box-shadow 0.3s",
+              "& when not (@showTitle)": {
+                "& when not (@showText)": {
+                  "& when not (@showButtons)": {
+                    "padding-bottom": "0"
+                  }
+                }
+              },
+              "&:hover": {
+                "box-shadow": "0px 0px 30px 0px rgba(0, 0, 0, 0.05)",
+                "transition": "box-shadow 0.3s"
+              }
+            }
+          },
+          "_name": "team1",
+          "_customHTML": "<section class=\"team1\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"checkbox\" title=\"Show Name\" name=\"showName\" checked>\n        <input type=\"checkbox\" title=\"Show Role\" name=\"showRole\" checked>\n        <input type=\"checkbox\" title=\"Show Social\" name=\"showSocial\" checked>\n        <input type=\"checkbox\" title=\"Card Background\" name=\"bgCard\" checked>\n        <input type=\"color\" title=\"Card Color\" name=\"cardColor\" value=\"#ffffff\" condition=\"bgCard\">\n        <select title=\"Cards Count\" name=\"countCards\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\" selected>3</option>\n            <option value=\"4\">4</option>\n        </select> \n        <select title=\"Social Icons\" name=\"socIcons\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\" selected>4</option>\n            <option value=\"5\">5</option>\n            <option value=\"6\">6</option>\n        </select>\n        \n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background5.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#232323\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n  <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-lg-4\">\n                    <div class=\"card\">\n                        <!--imagen-->\n                        <img src=\"@PROJECT_PATH@/assets/images/calc22-700x630.jpg\" alt=\"MATERIAL NEEDED CALCULATOR (CIRCLE)\" class=\"calculator-image\">\n                        <!--endimage-->\n                        <div class=\"card-header text-center\">\n                            <h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title\">MATERIAL NEEDED CALCULATOR (CIRCLE)</h4>\n                        </div>\n                        <div class=\"card-body\">\n                            <div id=\"showResultCircle\" class=\"hidden_class\">\n                                <div class=\"form-group\">\n                                    <h4><span id=\"result_circle\"></span> cubic yards</h4>\n                                </div>\n                                <div class=\"form-group text-right\">\n                                    <button type=\"button\" onclick=\"backFormCirculator()\" class=\"btn btn-primary\"> Back</button>\n                                </div>\n                            </div>\n                             <form id=\"formCirculator\">\n                                <div class=\"form-group\">\n                                    <label for=\"diameter_circle\">Diameter (ft):</label>\n                                    <input type=\"number\" id=\"diameter_circle\" class=\"form-control\">\n                                </div>\n                                <div class=\"form-group\">\n                                    <label for=\"depth_circle\">Depth (inches):</label>\n                                    <input type=\"number\" id=\"depth_circle\" class=\"form-control\">\n                                </div>\n\n                                <div class=\"form-group text-right\">\n                                    <button type=\"submit\" class=\"btn btn-primary\">Calculate</button>\n                                </div>\n                            </form> \n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-lg-4\">\n                    <div class=\"card\">\n                        <!--imagen-->\n                        <img src=\"@PROJECT_PATH@/assets/images/calc-700x630.jpg\" alt=\"FEET TO CUBIC YARDS CALCULATOR\" class=\"calculator-image\">\n                        <!--endimage-->\n                        <div class=\"card-header text-center\">\n                              <h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title\">FEET TO CUBIC YARDS CALCULATOR</h4>\n                        </div>\n                        <div class=\"card-body\">\n                            <div id=\"showResultCubic\" class=\"hidden_class\">\n                                <div class=\"form-group\">\n                                    <h4><span id=\"result_cubic\"></span> cubic yards</h4>\n                                </div>\n                                <div class=\"form-group text-right\">\n                                    <button type=\"button\" onclick=\"backFormCubec()\" class=\"btn btn-primary\"> Back</button>\n                                </div>\n                            </div>\n                             <form id=\"formCubic\">\n                                <div class=\"form-group\">\n                                    <label for=\"length_cubic\">Length (ft):</label>\n                                    <input type=\"number\" id=\"length_cubic\" class=\"form-control\">\n                                </div>\n                                <div class=\"form-group\">\n                                    <label for=\"width_cubic\">Width (ft):</label>\n                                    <input type=\"number\" id=\"width_cubic\" class=\"form-control\">\n                                </div>\n                                <div class=\"form-group\">\n                                    <label for=\"height_cubic\">Height (inches):</label>\n                                    <input type=\"number\" id=\"height_cubic\" class=\"form-control\">\n                                </div>\n\n                                <div class=\"form-group text-right\">\n                                    <button type=\"submit\" class=\"btn btn-primary\">Calculate</button>\n                                </div>\n                            </form> \n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"col-lg-4\">\n                    <div class=\"card\">\n                        <!--imagen-->\n                        <img src=\"@PROJECT_PATH@/assets/images/triangle-700x630.png\" alt=\"MATERIAL NEEDED CALCULATOR (TRIANGLE)\" class=\"calculator-image\" title>\n                        <!--endimage-->\n                        <div class=\"card-header text-center\">\n                               <h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title\">MATERIAL NEEDED CALCULATOR (TRIANGLE)</h4>\n                        </div>\n                        <div class=\"card-body\">\n                            <div id=\"showResultTriangle\" class=\"hidden_class\">\n                                <div class=\"form-group\">\n                                    <h4><span id=\"result_triangle\"></span> cubic yards</h4>\n                                </div>\n                                <div class=\"form-group text-right\">\n                                    <button type=\"button\" onclick=\"backFormTriangle()\" class=\"btn btn-primary\"> Back</button>\n                                </div>\n                            </div>\n                             <form id=\"formTriangle\">\n                                <div class=\"form-group\">\n                                    <label for=\"side_1_triangle\">Side 1 (ft):</label>\n                                    <input type=\"number\" id=\"side_1_triangle\" class=\"form-control\">\n                                </div>\n                                <div class=\"form-group\">\n                                    <label for=\"side_2_triangle\">Side 2 (ft):</label>\n                                    <input type=\"number\" id=\"side_2_triangle\" class=\"form-control\">\n                                </div>\n                                <div class=\"form-group\">\n                                    <label for=\"side_3_triangle\">Side 3 (ft):</label>\n                                    <input type=\"number\" id=\"side_3_triangle\" class=\"form-control\">\n                                </div>\n\n                                <div class=\"form-group\">\n                                    <label for=\"depth_triangle\">Depth (inches):</label>\n                                    <input type=\"number\" id=\"depth_triangle\" class=\"form-control\">\n                                </div>\n\n                                <div class=\"form-group text-right\">\n                                    <button type=\"submit\" class=\"btn btn-primary\">Calculate</button>\n                                </div>\n                            </form> \n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n</section>",
+          "_cid": "s1ViDDhds0",
+          "_anchor": "team1-9",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
+          "_sourceTheme": "mobirise4",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        }
+      ]
+    }
+  }
+}
